@@ -1,53 +1,30 @@
 {
-    "manifest_version": 2,
-
-    "name": "__MSG_appName__",
-    "description": "A extension to manage your bookmarks.",
-    "version": "1.0",
-
-    "default_locale": "zh_CN",
-    "icons": {
-        "16": "images/bookmark_16.png",
-        "24": "images/bookmark_24.png",
-        "32": "images/bookmark_32.png",
-        "48": "images/bookmark_48.png",
-        "64": "images/bookmark_64.png",
-        "72": "images/bookmark_72.png",
-        "96": "images/bookmark_96.png",
-        "128": "images/bookmark_128.png"
-    },
-
-    "author": "Soren Yang",
-
-    "browser_action": {
-        "default_icon": "images/icon.png",
-        "default_popup": "popup.html",
-        "default_title": "Micelle: for bookmarks."
-    },
-
-    "permissions": [
-        "activeTab",
-        "bookmarks",
-        "tabs",
-        "https://ajax.googleapis.com/"
-    ],
-
-    "commands": {
-        "_execute_browser_action": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+Y"
-            }
-        },
-        "command_bookmark_search": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+S"
-            },
-            "description": "Search In bookmarks"
-        }
-    },
-
-    "background": {
-        "scripts": ["js/eventPage.js"],
-        "persistent": false
-    }
+  "name": "My Bookmarks",
+  "version": "1.0",
+  "description": "A browser action with a popup dump of all bookmarks, including search, add, edit and delete.",
+  "permissions": [
+    "bookmarks"
+  ],
+  "icons": {
+    "16": "images/bookmark_16.png",
+    "24": "images/bookmark_24.png",
+    "32": "images/bookmark_32.png",
+    "48": "images/bookmark_48.png",
+    "64": "images/bookmark_64.png",
+    "72": "images/bookmark_72.png",
+    "96": "images/bookmark_96.png",
+    "128": "images/bookmark_128.png"
+  },
+  "browser_action": {
+      "default_title": "My Bookmarks",
+      "default_icon": "images/icon.png",
+      "default_popup": "app.html"
+  },
+  // "background":{
+  //   "scripts": ["background.js"],
+  //   "persistent": false
+  // },
+  "options_page": "app.html?page=click",
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
 }
